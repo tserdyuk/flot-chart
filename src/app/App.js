@@ -1,7 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Chart from 'chart/Chart'
+import qs from 'qs'
 
-export default class App extends Component {
+console.log(JSON.stringify(qs.parse(window.location.search.slice(1))))
+
+export default class App extends React.Component {
 	render() {
-		return <div className="box" />
+		const query = window.location.search.slice(1)
+		const points = JSON.parse(qs.parse(query).points)
+		return <Chart points={points} />
 	}
 }
