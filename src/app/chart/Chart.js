@@ -6,10 +6,10 @@ export default class Chart extends React.Component {
 		const { points } = this.props
 		$.plot('#chart', [{
 			data: points,
-			color: 'rgb(30, 180, 20)',
+			color: 'red',
 			threshold: {
 				below: bl,
-				color: 'rgb(200, 20, 30)'
+				color: '#666'
 			},
 			lines: { show: true },
 			curvedLines: {
@@ -22,7 +22,10 @@ export default class Chart extends React.Component {
 				[points[points.length - 1][0], bl]
 			],
 			color: 'red',
-			lines: { show: true }
+			dashes: {
+				show: true,
+				lineWidth: 1.5
+			}
 		}, {
 			data: points,
 			points: { show: true }
