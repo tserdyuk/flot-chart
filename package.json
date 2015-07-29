@@ -1,0 +1,15 @@
+{
+  "name": "chart",
+  "version": "1.0.0",
+  "description": "chart",
+  "author": "Taras Serdyuk <taras.serdyuk@gmail.com>",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "hg",
+    "url": "https://bitbucket.org/tserdyuk/chart"
+  },
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
