@@ -25,7 +25,7 @@ export default class Chart extends React.Component {
 			lines: { show: true }
 		}, {
 			data: points,
-			points: { show: true },
+			points: { show: true }
 		}], {
 			yaxis: {
 				ticks: 10,
@@ -33,6 +33,11 @@ export default class Chart extends React.Component {
 			},
 			series: {
 				curvedLines: { active: true }
+			},
+			grid: { hoverable: true },
+			tooltip: {
+				show: true,
+				content: '%x: %y.1'
 			}
 		})
 	}
