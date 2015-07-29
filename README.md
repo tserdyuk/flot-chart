@@ -7,14 +7,9 @@
 - "npm install" - setup project
 - "gulp" - build project
 - "gulp watch" - build project on changes continiously
-- "gulp serve" - like "gulp watch" with local livereload server started
+- "gulp serve" - starts local livereload server
 - "gulp clean" - remove build artifacts
 - "Ctrl + C" - SIGINT, exit
-
-### Build Options
-- dist - build destination directory (default - dist)
-- port - local serving server port (default - 8000)
-- env - name of target environment (default - dev)
 
 ### Project Structure
 - package.json - NPM project description
@@ -23,4 +18,3 @@
 - js files - use CommonJS moduling, can be of arbitrary directory structure
 - scss files - can be of arbitrary directory structure
 - jade files - a list of pages translated to html
-- src/env/{profile} - a place for different environment profiles (not used currently)
