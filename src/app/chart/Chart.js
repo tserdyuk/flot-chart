@@ -2,23 +2,25 @@ import React from 'react'
 
 export default class Chart extends React.Component {
 	componentDidMount() {
-		var self = this
+		var data = this.props.points
 		$(function() {
-			function plotWithOptions(t) {
-				$.plot('#chart', [{
-					data: self.props.points,
-					color: 'rgb(30, 180, 20)',
-					threshold: {
-						below: t,
-						color: 'rgb(200, 20, 30)'
-					},
-					lines: {
-						steps: true
-					}
-				}])
-			}
-
-			plotWithOptions(0)
+			$.plot('#chart', [{
+				data: data,
+				color: 'rgb(30, 180, 20)',
+				threshold: {
+					below: 4.9,
+					color: 'rgb(200, 20, 30)'
+				},
+				lines: { show: true },
+				curvedLines: { apply: true }
+			}, {
+				data: data,
+				points: { show: true },
+			}], {
+    			series: {
+    				curvedLines: { active: true }
+    			}
+			})
 		})
 	}
 	render() {
