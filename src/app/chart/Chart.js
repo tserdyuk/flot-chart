@@ -4,6 +4,12 @@ export default class Chart extends React.Component {
 	componentDidMount() {
 		const bl = 4.8
 		const { points } = this.props
+		const axisFont = {
+			size: 15,
+			weight: 'bold',
+			color: '#333',
+			family: 'sans-serif'
+		}
 		$.plot('#chart', [{
 			data: points,
 			color: 'red',
@@ -11,7 +17,10 @@ export default class Chart extends React.Component {
 				below: bl,
 				color: '#666'
 			},
-			lines: { show: true },
+			lines: {
+				show: true,
+				lineWidth: 3
+			},
 			curvedLines: {
 				apply: true,
 				monotonicFit: true
@@ -24,23 +33,31 @@ export default class Chart extends React.Component {
 			color: 'red',
 			dashes: {
 				show: true,
-				lineWidth: 1.5
+				lineWidth: 2,
+				dashLength: [20, 12]
 			}
 		}, {
 			data: points,
-			points: { show: true }
+			points: {
+				show: true,
+				radius: 4,
+				lineWidth: 3
+			}
 		}], {
 			yaxis: {
 				ticks: 10,
-				tickDecimals: 0
+				tickDecimals: 0,
+				font: axisFont
 			},
+			xaxis: { font: axisFont },
 			series: {
 				curvedLines: { active: true }
 			},
 			grid: { hoverable: true },
 			tooltip: {
 				show: true,
-				content: '%x: %y.1'
+				defaultTheme: false,
+				content: '%x: <b>%y.1</b>'
 			}
 		})
 	}
