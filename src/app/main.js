@@ -1,7 +1,7 @@
 'use strict'
 
 var React = require('react')
-var App = require('App')
+var App = require('./App')
 
 React.render(
 	React.createElement(App),

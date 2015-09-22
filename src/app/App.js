@@ -1,6 +1,6 @@
 import React from 'react'
-import Chart from 'chart/Chart'
 import qs from 'qs'
+import Chart from './chart/Chart'
 
 export default class App extends React.Component {
 	render() {
